@@ -8,5 +8,5 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 workers ENV.fetch("WEB_CONCURRENCY") { 2 }
 preload_app!
 plugin :tmp_restart
-pp_root = File.expand_path("../..", __FILE__)
+app_root = File.expand_path("../..", __FILE__)
 bind "unix:#{app_root}/tmp/sockets/puma.sock"
