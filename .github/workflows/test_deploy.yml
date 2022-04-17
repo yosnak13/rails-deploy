@@ -42,7 +42,7 @@ jobs:
 
   deploy:
     name: Deploy app to AWS
-    needs: test
+    needs: Test
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
@@ -52,7 +52,7 @@ jobs:
           mkdir -p -m 700 ~/.ssh
           echo "${{ secrets.SSH_KEY }}" > ~/.ssh/rails-deploy-webapp
           chmod 600 ~/.ssh/rails-deploy-webapp
-          
+
       - name: Deploy
         run: |
           eval $(ssh-agent)
