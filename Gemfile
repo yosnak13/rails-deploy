@@ -22,6 +22,8 @@ gem 'dotenv-rails', '2.7.6'
 group :development, :test do
   gem 'sqlite3', '1.4.1'
   gem 'byebug',  '11.0.1', platforms: [:mri, :mingw, :x64_mingw]
+  gem "capistrano", "~> 3.16", require: false
+  gem "capistrano-rails", "~> 1.6", require: false
 end
 
 group :development do
@@ -40,8 +42,6 @@ group :test do
   gem 'minitest-reporters',       '1.3.8'
   gem 'guard',                    '2.16.2'
   gem 'guard-minitest',           '2.4.6'
-  gem "capistrano", "~> 3.16", require: false
-  gem "capistrano-rails", "~> 1.6", require: false
 end
 
 group :production do
