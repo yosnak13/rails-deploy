@@ -42,3 +42,7 @@ set :keep_releases, 5
 set :rbenv_type, :user
 set :rbenv_ruby, File.read('.ruby-version').strip
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+
+# config/puma.rbの設定内容
+set :puma_threads, [0, 5]
+set :puma_workers, 2
